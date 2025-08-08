@@ -57,3 +57,18 @@ console.log('Total Pedido:',pedido1.total());
 //Un LineItem NO sabe de su pedido
 const item= pedido1.items[0];
 console.log('Item conoce el ID del pedido?:','id' in item);
+
+//Bidireccional
+const Autor = require('./models/Autor');
+const Libro = require('./models/Libro');
+
+const autor1 = new Autor(1,'Gabriel Garcia Marquez');
+const libro1= new Libro('9786287641587','100 años de soledad');
+const libro2= new Libro('9789580600015','Amor en los tiempos de cólera');
+
+console.log(libro1);
+console.log(autor1);
+autor1.agregarLibro(libro1);
+autor1.agregarLibro(libro2);
+console.log(autor1);
+console.log(libro1);
