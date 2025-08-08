@@ -43,3 +43,17 @@ animal2.hablar();
 
 const animal3 = new Pajaro("Piolin","Canario");
 animal3.hablar();
+
+// Asociación
+const Pedido = require('./models/Pedido');
+const LineItem = require('./models/LineItem');
+
+const pedido1 = new Pedido('P-001');
+pedido1.addItem(new LineItem('Manzanas',3,1.2));
+pedido1.addItem(new LineItem('Peras',2,1.5));
+
+console.log('Total Pedido:',pedido1.total());
+
+//Un LineItem NO sabe de su pedido
+const item= pedido1.items[0];
+console.log('Item conoce el ID del pedido?:','id' in item);
