@@ -14,3 +14,4 @@ class ItemController{
         this.view.mostrarMensaje(`Creado con ID ${creado.id}.`);
     }
 }
+module.exports={ItemController};

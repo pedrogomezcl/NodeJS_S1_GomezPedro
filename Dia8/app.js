@@ -1,4 +1,4 @@
-const promptSync = require("prompt-sync");
+const promptSync = require("prompt-sync")();
 
 const {ItemModel}= require('./models/itemModel');
 const {ItemView} = require('./views/itemView');
@@ -24,3 +24,4 @@ function main(){
         }
     }
 }
+main();
