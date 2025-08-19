@@ -1,4 +1,4 @@
-const promptSync = require("prompt-sync")();
+const prompt = require("prompt-sync")();
 
 const {ItemModel}= require('./models/itemModel');
 const {ItemView} = require('./views/itemView');
@@ -6,17 +6,17 @@ const {ItemController}= require('./controllers/itemController');
 
 const model = new ItemModel();
 const view = ItemView;
-const controller = new ItemController({model,view,promptSync});
+const controller = new ItemController({model,view,prompt});
 
 function main(){
     let salir = false;
     while(!salir){
         view.mostrarMenu();
-        const op = view.pedirOpcion(promptSync);
+        const op = view.pedirOpcion(prompt);
         switch(op){
             case "1":
                 controller.crear();
-            case "0":
+            case "10":
                 salir = true;
                 view.mostrarMensaje("¡Hasta Luego!");
             default:

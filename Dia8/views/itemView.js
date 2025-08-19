@@ -1,6 +1,7 @@
 // La vista busca centralizar toda la interacción
 // por consola, lo cual incluye menú, prompts y 
 // formatos de salida
+
 const ItemView = {
     mostrarMenu() {
         console.log("\n=== CRUD de Items ===");
