@@ -1,4 +1,3 @@
-const {ObjectId}= require('mongodb');
 const connectDB = require('../db');
 
 class UserModel{
@@ -9,6 +8,9 @@ class UserModel{
             edad:'number'
         };
     }
+
+
+    
     validar(usuario){
         for(let campo in this.schema){
             if (typeof usuario[campo] !== this.schema[campo]){
